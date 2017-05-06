@@ -24,12 +24,12 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
 // });
 
 
-  db.collection('Users').find({name: 'Spiral'}).toArray().then((docs) => {
-    console.log('Users');
-    console.log(JSON.stringify(docs, undefined, 2));
-  }, (err) => {
-    console.log('Unable to count users', err);
-  });
+  // db.collection('Users').find({name: 'Spiral'}).toArray().then((docs) => {
+  //   console.log('Users');
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (err) => {
+  //   console.log('Unable to count users', err);
+  // });
 
   // db.close();
 });
