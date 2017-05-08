@@ -1,13 +1,14 @@
-const {ObjectID} = require('mongodb');
+var {ObjectID} = require('mongodb');
 
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-const {mongoose} = require('./db/mongoose');
-const {Todo} = require('./models/todo');
-const {User} = require('./models/user');
+var {mongoose} = require('./db/mongoose');
+var {Todo} = require('./models/todo');
+var {User} = require('./models/user');
 
 const app = express();
+const port = process.env.PORT || 3000; // needed for heroku
 
 app.use(bodyParser.json());
 
@@ -48,7 +49,7 @@ app.get('/todos/:id', (req, res) => {
 
 
 app.listen(3000, () => {
-  console.log('Started on port 3000');
+  console.log(`Started up on port ${port}`);
 });
 
 module.exports = {app};
